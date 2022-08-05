@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is built to set up an API that returns players from the CBS Sports API who play basketball, football and baseball.
 
-Things you may want to cover:
+## Setting up the app
 
-* Ruby version
+Clone this repo locally and cd into it. Then run the following commands.
 
-* System dependencies
+These commands are for the general setup of the application.
+```
+bundle install
+rails db:create
+rails db:migrate
+bundle exec rails webpacker:install
+```
 
-* Configuration
+These commands will populate your database with data from the CBS API.
+```
+rake import_position_age_data:import_baseball_position_age_data
+rake import_position_age_data:import_basketball_position_age_data
+rake import_position_age_data:import_football_position_age_data
+rake import_player_data:import_baseball_data
+rake import_player_data:import_basketball_data
+rake import_player_data:import_football_data
+```
 
-* Database creation
+## Accessing the API
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To access the API, please start your server using `rails s` and navigate to http://localhost:3000/players.
