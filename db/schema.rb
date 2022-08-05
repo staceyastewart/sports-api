@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_04_211710) do
+ActiveRecord::Schema.define(version: 2022_08_05_033156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 2022_08_04_211710) do
     t.integer "age"
     t.string "sport"
     t.integer "average_position_age_diff"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "position_ages", force: :cascade do |t|
+    t.string "sport"
+    t.string "position"
+    t.text "ages", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,0 +1,2 @@
+class PositionAge < ApplicationRecord
+end
