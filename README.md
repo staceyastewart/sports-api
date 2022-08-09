@@ -11,6 +11,7 @@ These commands are for the general setup of the application.
 bundle install
 rails db:create
 rails db:migrate
+rails db:test:prepare
 bundle exec rails webpacker:install
 ```
 
