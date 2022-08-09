@@ -27,3 +27,24 @@ rake import_player_data:import_football_data
 ## Accessing the API
 
 To access the API, please start your server using `rails s` and navigate to http://localhost:3000/players.
+
+
+## Querying the API
+
+To query the API, please have your server running and nevigate to http://localhost:3000/search. From there you can add query parameters to the url i.e. http://localhost:3000/search?last_name=S&age=36 would return:
+
+```
+[
+    {
+        "id": 40354,
+        "name_brief": "C. S.",
+        "first_name": "Carlos",
+        "last_name": "Santana",
+        "position": "1B",
+        "age": 36,
+        "average_position_age_diff": 7
+    }
+]
+```
+
+The available search terms are: age, position, sport, last_name (which only searches by the first letter of the player's last name)
